@@ -1,19 +1,27 @@
-import { useQuery } from '@tanstack/react-query';
-import { Todo } from '../types/todo.types';
-import TodoService from '../api/services/TodoService';
+import useTodos from 'hooks/useTodos';
 import Loader from './ui/Loader';
 
 const TodoList: React.FC = () => {
-	const { data, isLoading } = useQuery<Todo[], Error>({
-		queryKey: ['todos'],
-		queryFn: TodoService.getAll
-	});
+	const { todos, isLoading } = useTodos();
 
 	if (isLoading) {
 		return <Loader />;
 	}
 
-	return <div>Todos: </div>;
+	if (todos.length === 0) {
+		return <h1>No matching todos...</h1>;
+	}
+
+	return (
+		<>
+			<h2>Todos:</h2>
+			<ol>
+				{todos.map(todo => {
+					return <li key={todo.id}>{todo.title}</li>;
+				})}
+			</ol>
+		</>
+	);
 };
 
 export default TodoList;

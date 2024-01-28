@@ -9,5 +9,6 @@
 	"bracketSpacing": true,
 	"bracketSameLine": true,
 	"arrayBracketSpacing": "always",
+	"arrowParens": "avoid",
 	"singleAttributePerLine": true
 }

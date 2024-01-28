@@ -4,8 +4,8 @@ const queryConfig: DefaultOptions = {
 	queries: {
 		refetchOnWindowFocus: false,
 		refetchOnMount: false,
-		refetchOnReconnect: false,
-		retry: false,
+		refetchOnReconnect: true,
+		retry: 2,
 		staleTime: 5000
 	}
 };

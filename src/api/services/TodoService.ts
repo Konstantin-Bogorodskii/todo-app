@@ -1,16 +1,15 @@
-import { Todo } from '../../types/todo.types';
-import { UniqueId } from '../../types/types';
-import apiClient from '../apiClient';
-
-const SERVICE_PATH = '/todos';
+import { UniqueId } from 'types/types';
+import { Todo } from 'types/todo.types';
+import apiClient from 'api/apiClient';
+import { SERVICE_ENDPOINTS } from 'constants/api';
 
 const getAll = async () => {
-	const response = await apiClient.get<Todo[]>(SERVICE_PATH);
+	const response = await apiClient.get<Todo[]>(SERVICE_ENDPOINTS.TODOS);
 	return response.data;
 };
 
 const getById = async (id: UniqueId) => {
-	const response = await apiClient.get<Todo[]>(`${SERVICE_PATH}/${id}`);
+	const response = await apiClient.get<Todo[]>(`${SERVICE_ENDPOINTS.TODOS}/${id}`);
 	return response.data;
 };
 
