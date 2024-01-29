@@ -3,15 +3,17 @@ import TodoService from 'api/services/TodoService';
 import { QUERY_KEYS } from 'constants/api';
 import { Todo } from 'types/todo.types';
 
-const useTodos = () => {
-	const { data: todos = [], isLoading } = useQuery<Todo[], Error>({
+const useGetTodos = () => {
+	const {
+		data: todos = [],
+		isLoading,
+		error
+	} = useQuery<Todo[], Error>({
 		queryKey: [QUERY_KEYS.TODOS],
-		queryFn: TodoService.getAll,
-		gcTime: Infinity,
-		staleTime: Infinity
+		queryFn: TodoService.getAll
 	});
 
-	return { todos, isLoading };
+	return { todos, isLoading, error };
 };
 
-export default useTodos;
+export default useGetTodos;

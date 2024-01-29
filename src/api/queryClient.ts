@@ -1,12 +1,13 @@
 import { DefaultOptions, QueryClient } from '@tanstack/react-query';
+import { CACHE_TIME, STALE_TIME } from 'constants/api';
 
 const queryConfig: DefaultOptions = {
 	queries: {
 		refetchOnWindowFocus: false,
 		refetchOnMount: false,
-		refetchOnReconnect: true,
 		retry: 2,
-		staleTime: 5000
+		gcTime: CACHE_TIME,
+		staleTime: STALE_TIME
 	}
 };
 

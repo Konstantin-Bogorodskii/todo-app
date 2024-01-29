@@ -1,13 +1,17 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import queryClient from 'api/queryClient';
+import TodoForm from 'components/TodoForm';
 import TodoList from 'components/TodoList';
 
 const App: React.FC = () => {
 	return (
-		<QueryClientProvider client={queryClient}>
-			<h1>React Query Start</h1>
-			<TodoList />
-		</QueryClientProvider>
+		<div className="container">
+			<QueryClientProvider client={queryClient}>
+				<h1 className="header">Get Todos Done!</h1>
+				<TodoForm />
+				<TodoList />
+			</QueryClientProvider>
+		</div>
 	);
 };
 

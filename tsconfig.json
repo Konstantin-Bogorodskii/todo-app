@@ -21,7 +21,8 @@
 			"api/*": ["api/*"],
 			"services/*": ["api/services/*"],
 			"hooks/*": ["hooks/*"],
-			"constants/*": ["constants/*"]
+			"constants/*": ["constants/*"],
+			"styles/*": ["styles/*"]
 		},
 
 		/* Linting */

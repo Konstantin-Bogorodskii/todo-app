@@ -12,7 +12,8 @@ export default defineConfig({
 			hooks: '/src/hooks',
 			api: '/src/api',
 			services: '/src/api/services',
-			constants: '/src/constants'
+			constants: '/src/constants',
+			styles: '/src/styles'
 		}
 	}
 });
